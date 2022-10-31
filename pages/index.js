@@ -1,16 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import React, { useState } from "react";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -19,16 +10,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
-        <h1>Speed Cubing App</h1>
+        <h1>Successfully logged in.</h1>
       </header>
-      <form onSubmit={handleSubmit}>
-        <p>Please sign in.</p>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input id="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
-        </div>
-        <button>Login in/Sign up</button>
-      </form>
     </div>
   );
 }
