@@ -1,10 +1,8 @@
-import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import { UserContext } from "../lib/UserContext";
 import Loading from "./components/loading";
-import Cube from "./components/cube";
 
-export default function Home() {
+const Profile = () => {
   const [user] = useContext(UserContext);
 
   return (
@@ -13,12 +11,17 @@ export default function Home() {
         <Loading />
       ) : (
         user?.issuer && (
-          <div>
-            <h1>You&apos;re logged in!</h1>
-            <Cube />
-          </div>
+          <>
+            <div className="label">Email</div>
+            <div className="profile-info">{user.email}</div>
+
+            <div className="label">User Id</div>
+            <div className="profile-info">{user.issuer}</div>
+          </>
         )
       )}
     </>
   );
-}
+};
+
+export default Profile;

@@ -1,10 +1,13 @@
 import { Magic } from "@magic-sdk/admin";
-import { setLoginSession } from "../../lib/auth";
+
+const magic = new Magic(process.env.MAGIC_SECRET_KEY);
 
 export default async function login(req, res) {
-  const magic = new Magic(process.env.MAGIC_SECRET_KEY);
-  const didToken = req.headers.authorization.substr(7);
-  const metaData = await magic.users.getMetadataByToken(didToken);
-  await setLoginSession(res, metaData);
-  res.send({ done: true });
+  try {
+    const didToken = req.headers.authorization.substr(7);
+    await magic.token.validate(didToken);
+    res.status(200).json({ authenticated: true });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 }
