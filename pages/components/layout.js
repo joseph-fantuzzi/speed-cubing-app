@@ -9,9 +9,8 @@ const Layout = (props) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
-    <main>
-      <div className="container">{props.children}</div>
-    </main>
+    <main>{props.children}</main>
+    <style jsx>{``}</style>
   </>
 );
 

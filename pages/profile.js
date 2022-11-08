@@ -11,24 +11,53 @@ const Profile = () => {
         <Loading />
       ) : (
         user?.issuer && (
-          <>
-            <div className="label">Email</div>
-            <div className="profile-info">{user.email}</div>
-
-            <div className="label">User Id</div>
-            <div className="profile-info">{user.issuer}</div>
-          </>
+          <div className="container">
+            <div className="border">
+              <p className="title">Account Details</p>
+              <div>
+                <div className="label">Email</div>
+                <p>{user.email}</p>
+              </div>
+              <div>
+                <div className="label">Decentralized ID</div>
+                <p>{user.issuer.substr(4)}</p>
+              </div>
+            </div>
+          </div>
         )
       )}
       <style jsx>{`
-        .label {
-          font-size: 12px;
-          color: #6851ff;
-          margin: 30px 0 5px;
+        .container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 83.5vh;
         }
-        .profile-info {
-          font-size: 17px;
-          word-wrap: break-word;
+        .border {
+          box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
+          border-radius: 13px;
+          padding: 2em;
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          gap: 2em;
+          max-width: 600px;
+          margin-bottom: 8em;
+          overflow-wrap: break-word;
+        }
+        .label {
+          font-weight: 700;
+          margin-bottom: 0.3em;
+          color: #fd2bc2;
+        }
+        .title {
+          font-size: 1.2em;
+          font-weight: 700;
+        }
+        @media (min-width: 800px) {
+          .border {
+            width: 70%;
+          }
         }
       `}</style>
     </>

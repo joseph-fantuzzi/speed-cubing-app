@@ -21,6 +21,9 @@ const Loading = () => (
         align-items: center;
         flex-direction: column;
       }
+      .loading-animation {
+        margin-bottom: 6em;
+      }
       @media (prefers-reduced-motion: no-preference) {
         .loading-animation {
           animation: logo-spin infinite 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
