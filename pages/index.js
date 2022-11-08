@@ -1,4 +1,3 @@
-import styles from "../styles/Home.module.css";
 import { useContext } from "react";
 import { UserContext } from "../lib/UserContext";
 import Loading from "./components/loading";

@@ -20,6 +20,17 @@ const Profile = () => {
           </>
         )
       )}
+      <style jsx>{`
+        .label {
+          font-size: 12px;
+          color: #6851ff;
+          margin: 30px 0 5px;
+        }
+        .profile-info {
+          font-size: 17px;
+          word-wrap: break-word;
+        }
+      `}</style>
     </>
   );
 };
