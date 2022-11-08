@@ -20,7 +20,7 @@ const Header = () => {
       <nav>
         <ul>
           {user?.loading ? (
-            <div style={{ height: "38px" }}></div>
+            <div></div>
           ) : user?.issuer ? (
             <>
               <Logo />
@@ -37,15 +37,18 @@ const Header = () => {
               </div>
             </>
           ) : (
-            <li className="btn">
-              <Link href="/login">Login</Link>
-            </li>
+            <div className="login-container">
+              <Logo />
+              <li className="btn">
+                <Link href="/login">Login</Link>
+              </li>
+            </div>
           )}
         </ul>
       </nav>
       <style jsx>{`
         header {
-          margin: 2em 0;
+          padding: 2em 0;
         }
         nav {
           width: 90%;
@@ -55,13 +58,18 @@ const Header = () => {
           list-style-type: none;
           display: flex;
           justify-content: space-between;
-          padding: 0;
         }
         .link-container {
           display: flex;
           justify-content: flex-end;
           align-items: center;
           gap: 3em;
+        }
+        .login-container {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
         li {
           font-size: 1.1em;

@@ -6,17 +6,20 @@ body {
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-body {
-  background-color: #d1defb;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #d1defb;
+  min-height: 100vh;
 }
 
 @media (prefers-color-scheme: dark) {
