@@ -31,7 +31,7 @@ const Profile = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 83.5vh;
+          min-height: calc(100vh - 164px);
         }
         .border {
           box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;

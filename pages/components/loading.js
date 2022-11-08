@@ -10,7 +10,7 @@ const Loading = () => (
     <style jsx>{`
       .container {
         width: 100%;
-        height: calc(100vh - 64px);
+        min-height: calc(100vh - 64px);
         display: flex;
         justify-content: center;
         align-items: center;
