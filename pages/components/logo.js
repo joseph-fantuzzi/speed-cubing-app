@@ -1,6 +1,12 @@
+import { useRouter } from "next/router";
+
 const Logo = () => {
+  const router = useRouter();
+
   return (
     <svg
+      onClick={() => router.push("/")}
+      style={{ cursor: "pointer" }}
       width="102"
       height="100"
       viewBox="0 0 102 100"
